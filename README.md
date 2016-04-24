@@ -1,4 +1,4 @@
-# Vagrant skeleton
+# Static/Dynamic Application Security Testing Tools
 
 ## Vagrant
 
@@ -22,9 +22,8 @@ vagrant ssh
 
 If you were asked for a password enter 'vagrant'.
 
-# Hack your own webapp
 
-##Usage of SAST-Tools:
+#Usage of SAST-Tools:
 RIPS: http://skeleton.local:8086/rips/index.php
 retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
 pixyi: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
@@ -34,12 +33,12 @@ Web Application Protector: cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /h
 Iniscan: /home/vagrant/.config/composer/vendor/psecio/iniscan/bin/iniscan scan --path <path-to- php.ini>
 arachni: http://skeleton.local:9292 (admin@admin.admin / administrator); Tipp: Use autologin Plugin
 
-##Usage of DAST-Tools:
+#Usage of DAST-Tools:
 sqlmap: /home/vagrant/sqlmap/sqlmap.py -u http://project.local/index.php?x=1 
 retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
 testssl.sh: /home/vagrant/testssl.sh/testssl.sh https://www.fhunii.com
 OWASP Zap: Go to https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project and follow instructions
 w3af: w3af
 
-##Examples for Infrastructure-Tests
+#Examples for Infrastructure-Tests
 Lynis: /home/vagrant/lynis/lynis  audit system --auditor "Timo Pagel"
