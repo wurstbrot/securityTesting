@@ -1,0 +1,42 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// ROMANTIKHOTELS
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Import Mixins
+@import libraries/bobbysMixins
+
+// Reset Browser Settings
+@import libraries/reset
+
+// LOAD PROJECT CONFIG
+@import _config
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// MOBILE FIRST...
+
+// helper classes
+.hidden
+	display: none
+
+// BASICS
+body
+	+rem(font-size, $fontsize)
+	line-height: 1.25
+	font-family: $font
+	background: $background
+	color: $text-color
+	+box-sizing
+	*
+		+box-sizing
+
+#body
+	+clearfix
+
+// styles for js plugins
+@import modify-owl-slider
+@import modify-rate-calendar
+@import modify-add2any
+
+/* (c) 2015 Björn Lorenz, ennit interactive, <www.ennit.de> */

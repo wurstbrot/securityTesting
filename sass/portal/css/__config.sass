@@ -1,0 +1,99 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// CONFIG
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// text + button colors
+$text-color: #4a390a
+$link-color: #df6a1d
+$button-color: #19190a
+$light-color: #f2eeeb
+
+// background-colors
+$background: #f0ebe6
+$background-2: #e8e2d9
+$background-3: #d8cfbf
+$background-booking: #837567
+$headline-color: $background-booking
+$background-quote: #3c3c3c
+
+// TYPO
+// BASE: 1rem = 10px
+$font: "p22-underground", Arial, Verdana, sans-serif
+$second-font: "adobe-caslon-pro", "Times New Roman", Times, serif
+$light: 200
+
+$fontsize: 					15px
+$fontsize-large: 			19px
+$fontsize-portal-header: 	30px
+$fontsize-menu: 			16px
+$fontsize-small: 			13px
+$fontsize-tiny: 			11px
+
+$second-fontsize-large: 		22px
+$second-fontsize-menu: 			17px
+$second-fontsize-tiny: 			11px
+$second-fontsize-quotes: 		31px
+$second-fontsize-quotes-small: 	13px
+
+$grid-spacing: 20px
+$max-width: 1320px
+
+// BREAKPOINTS
+$mobile-breakpoint-large: 40em // 640px
+$desktop-breakpoint-small: 62em // 992px 	/!\ more than ipad portrait
+$desktop-breakpoint-medium: 72em // 1152px 	/!\ more than ipad  landscape
+$desktop-breakpoint-large: 82.5em // 1320px 	/!\ more than $max-width
+
+// BASICS
+=default-transtion
+	+transition(all .6s ease-out)
+
+// ICONFONT
+$font-name: "romantik-hotels"
+$font-postfix: "3zrna7"
+$font-dir: "/themes/portal/webfonts/romantik-hotels/fonts"
+@font-face
+	font-family: '#{$font-name}'
+	src: url('#{$font-dir}/romantik-hotels.eot?#{$font-postfix}')
+	src: url('#{$font-dir}/romantik-hotels.eot?#iefix-#{$font-postfix}') format('embedded-opentype'), url('#{$font-dir}/romantik-hotels.ttf?#{$font-postfix}') format('truetype'), url('#{$font-dir}/romantik-hotels.woff?#{$font-postfix}') format('woff'), url('#{$font-dir}/romantik-hotels.svg?#{$font-postfix}##{$font-name}') format('svg')
+	font-weight: normal
+	font-style: normal
+
+$icon-arrow-up:		"\e632"
+$icon-arrow-right: 	"\e62e"
+$icon-arrow-down: 	"\e629"
+$icon-arrow-left:	"\e62d"
+
+$icon-arrow-thin-up:	"\e631"
+$icon-arrow-thin-right:	"\e630"
+$icon-arrow-thin-down: 	"\e62a"
+$icon-arrow-thin-left: 	"\e62f"
+
+$icon-facebook: 		"\e61c"
+$icon-twitter: 			"\e622"
+$icon-googleplus: 		"\e61e"
+$icon-youtube: 			"\e624"
+$icon-pinterest: 		"\e620"
+//$icon-instagram: 		"x" // TODO
+$icon-xing:	 			"\e623"
+$icon-linkedin: 		"\e61f"
+$icon-tumblr: 			"\e621"
+//$icon-whatsapp: 		"x" // TODO
+
+$icon-arrows-alt: 		"\f0b2"
+$icon-download: 		"\f019"
+$icon-view-image: 		"\f0b2"
+$icon-download-file: 	"\f019"
+
+//new mobile quickbooker
+$icon-close: 			"\e625"
+$icon-close2: 			"\e900"
+$icon-location-default: "\e901"
+$icon-location-loading: "\e105"
+$icon-location-error: 	"\e901"
+$icon-location-checked: "\e902"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// end

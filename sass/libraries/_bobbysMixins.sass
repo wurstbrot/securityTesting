@@ -1,0 +1,401 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+// Bobbys MIXINS Library
+//
+// (c) 2014 by Björn Lorenz, ennit interactive GmbH, www.ennit.de
+// last modification: 01/02/2016
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Simple Gradient Mixin
+// for two colors, radial or liniar Gradients
+
+=gradient($color-1, $color-2, $colorstop-1:0% , $colorstop-2:100%, $direction:bottom, $basecolor:$color-2)
+	@if $direction == radial
+		background: $basecolor
+		background: $basecolor -moz-radial-gradient(		center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-gradient(radial, center center, 0px, center center, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2)) no-repeat // Chrome,Safari4+
+		background: $basecolor -webkit-linear-gradient(	center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			ellipse at center, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-2)}',GradientType=1 ) // IE6-9 fallback on horizontal gradient
+	@else if $direction == top
+		background: $basecolor
+		background: $basecolor -moz-linear-gradient(		bottom, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-gradient(linear, left bottom, left top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2)) no-repeat // Chrome,Safari4+
+		background: $basecolor -webkit-linear-gradient(	bottom, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			bottom, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		bottom, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			to top, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-2)}', endColorstr='#{ie-hex-str($color-1)}',GradientType=0 ) // IE6-9
+	@else if $direction == right
+		background: $basecolor
+		background: $basecolor -moz-linear-gradient(		left, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-gradient(linear, left top, right top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2)) no-repeat // Chrome,Safari4+
+		background: $basecolor -webkit-linear-gradient(	left, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			left, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		left, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			to right, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-2)}',GradientType=1 ) // IE6-9
+	@else if $direction == bottom
+		background: $basecolor
+		background: $basecolor -moz-linear-gradient(		top, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-gradient(linear, left top, left bottom, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2)) no-repeat // Chrome,Safari4+
+		background: $basecolor -webkit-linear-gradient(	top, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			top, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		top, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			to bottom, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-2)}',GradientType=0 ) // IE6-9
+	@else if $direction == left
+		background: $basecolor
+		background: $basecolor -moz-linear-gradient(		right, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-gradient(linear, right top, left top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2)) no-repeat // Chrome,Safari4+
+		background: $basecolor -webkit-linear-gradient(	right, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			right, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		right, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			to left, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-2)}', endColorstr='#{ie-hex-str($color-1)}',GradientType=1 ) // IE6-9
+	@else
+		background: $basecolor
+		background: $basecolor -moz-linear-gradient(		$direction, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // FF3.6+
+		background: $basecolor -webkit-linear-gradient(	$direction, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Chrome10+,Safari5.1+
+		background: $basecolor -o-linear-gradient(			$direction, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // Opera 11.10+
+		background: $basecolor -ms-linear-gradient(		$direction, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // IE10+
+		background: $basecolor linear-gradient(			$direction, $color-1 $colorstop-1, $color-2 $colorstop-2) no-repeat // W3C
+
+// for three colors, radial or liniar Gradients
+=gradient-3($color-1, $color-2, $color-3, $colorstop-1:0% , $colorstop-2:50%, $colorstop-3:100%, $direction:bottom)
+	@if $direction == radial
+		background: $color-3
+		background: -moz-radial-gradient(		center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-gradient(radial, center center, 0px, center center, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2), color-stop($colorstop-3,$color-3)) no-repeat // Chrome,Safari4+
+		background: -webkit-linear-gradient(	center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		center, ellipse cover, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			ellipse at center, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-3)}',GradientType=1 ) // IE6-9 fallback on horizontal gradient
+	@else if $direction == top
+		background: $color-3
+		background: -moz-linear-gradient(		bottom, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-gradient(linear, left bottom, left top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2), color-stop($colorstop-3,$color-3)) no-repeat // Chrome,Safari4+
+		background: -webkit-linear-gradient(	bottom, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			bottom, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		bottom, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			to top, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-3)}', endColorstr='#{ie-hex-str($color-1)}',GradientType=0 ) // IE6-9
+	@else if $direction == right
+		background: $color-3
+		background: -moz-linear-gradient(		left, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-gradient(linear, left top, right top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2), color-stop($colorstop-3,$color-3)) no-repeat // Chrome,Safari4+
+		background: -webkit-linear-gradient(	left, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			left, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		left, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			to right, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-3)}',GradientType=1 ) // IE6-9
+	@else if $direction == bottom
+		background: $color-3
+		background: -moz-linear-gradient(		top, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-gradient(linear, left top, left bottom, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2), color-stop($colorstop-3,$color-3)) no-repeat // Chrome,Safari4+
+		background: -webkit-linear-gradient(	top, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			top, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		top, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			to bottom, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-1)}', endColorstr='#{ie-hex-str($color-3)}',GradientType=0 ) // IE6-9
+	@else if $direction == left
+		background: $color-3
+		background: -moz-linear-gradient(		right, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-gradient(linear, right top, left top, color-stop($colorstop-1,$color-1), color-stop($colorstop-2,$color-2), color-stop($colorstop-3,$color-3)) no-repeat // Chrome,Safari4+
+		background: -webkit-linear-gradient(	right, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			right, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		right, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			to left, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($color-3)}', endColorstr='#{ie-hex-str($color-1)}',GradientType=1 ) // IE6-9
+	@else
+		background: $color-3
+		background: -moz-linear-gradient(		$direction, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // FF3.6+
+		background: -webkit-linear-gradient(	$direction, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(			$direction, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // Opera 11.10+
+		background: -ms-linear-gradient(		$direction, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // IE10+
+		background: linear-gradient(			$direction, $color-1 $colorstop-1, $color-2 $colorstop-2, $color-3 $colorstop-3) no-repeat // W3C
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// text gradients // webkit only
+
+=text-gradient($color-1, $color-2)
+	background: -webkit-linear-gradient($color-1, $color-2)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// css triangles
+
+=triangle($direction, $color, $base, $length)
+	width: 0
+	height: 0
+	border: $base/2 solid transparent
+	@if $direction == up
+		border-top-width: 0
+		border-bottom-width: $length
+		border-bottom-color: $color
+	@else if $direction == right
+		border-right-width: 0
+		border-left-width: $length
+		border-left-color: $color
+	@else if $direction == down
+		border-bottom-width: 0
+		border-top-width: $length
+		border-top-color: $color
+	@else if $direction == left
+		border-left-width: 0
+		border-right-width: $length
+		border-right-color: $color
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// fast adding vendor prefixes to css-properties
+
+=appearance($value:none)
+	-webkit-appearance:	$value
+	-moz-appearance:	$value
+	appearance:			$value //W3C
+
+=background-size($value:cover)
+	-webkit-background-size:	$value
+	-moz-background-size:		$value
+	-ms-background-size:		$value
+	-o-background-size:			$value
+	background-size:			$value //W3C
+
+=border-radius($value, $corner:'-')
+	-webkit-border#{$corner}radius:	$value
+	-moz-border#{$corner}radius:	$value
+	-ms-border#{$corner}radius:		$value
+	-o-border#{$corner}radius:		$value
+	border#{$corner}radius:			$value	//W3C
+
+=box-shadow($value...)
+	-webkit-box-shadow:		$value
+	-moz-box-shadow:		$value
+	-ms-box-shadow:			$value
+	-o-box-shadow:			$value
+	box-shadow:				$value	//W3C
+
+=box-sizing($value: border-box)
+	-webkit-box-sizing:		$value
+	-moz-box-sizing:		$value
+	-ms-box-sizing:			$value
+	-o-box-sizing:			$value
+	box-sizing:				$value //W3C
+
+=clip-path($value)
+	-webkit-clip-path: 		$value
+	clip-path: 				$value //W3C
+
+=hyphens($value: auto)
+	-webkit-hyphens:		$value
+	-moz-hyphens:			$value
+	-ms-hyphens:			$value
+	-o-hyphens:				$value
+	hyphens:				$value //W3C
+
+=opacity($value)
+	-webkit-opacity:		$value
+	-khtml-opacity:			$value
+	-moz-opacity:			$value
+	-ms-opacity:			$value
+	-o-opacity:				$value
+	opacity:				$value //W3C
+	zoom: 1 // IE 5-7
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value*100}) // IE 8/9
+	filter: alpha(opacity=#{$value*100}) // IE 5-7
+
+=text-shadow($value...)
+	-webkit-text-shadow:	$value
+	-moz-text-shadow:		$value
+	-ms-text-shadow:		$value
+	-o-text-shadow:			$value
+	text-shadow:			$value	//W3C
+
+=transform($value...)
+	-webkit-transform:		$value
+	-moz-transform:			$value
+	-ms-transform:			$value
+	-o-transform:			$value
+	transform:				$value //W3C
+
+=transform-origin($value...)
+	-webkit-transform-origin:	$value
+	-moz-transform-origin:		$value
+	-ms-transform-origin:		$value
+	-o-transform-origin:		$value
+	transform-origin:			$value //W3C
+
+=transition($value...)
+	-webkit-transition:		$value
+	-moz-transition:		$value
+	-ms-transition:			$value
+	-o-transition:			$value
+	transition:				$value //W3C
+
+=white-space($value...)
+	-moz-white-space:	$value
+	-o-white-space:		$value
+	white-space:		$value //W3C
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// NO SELECT - disable user selection
+
+=no-select()
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// COLUMNS
+
+=multiple-columns($count: 2, $gap: 10px, $rule: 0)
+	-webkit-column-count:	$count
+	-moz-column-count:		$count
+	-ms-column-count:		$count
+	-o-column-count:		$count
+	column-count:			$count //W3C
+	-webkit-column-gap:		$gap
+	-moz-column-gap:		$gap
+	-ms-column-gap:			$gap
+	-o-column-gap:			$gap
+	column-gap:				$gap //W3C
+	-webkit-column-rule:	$rule
+	-moz-column-rule:		$rule
+	-ms-column-rule:		$rule
+	-o-column-rule:			$rule
+	column-rule:			$rule //W3C
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// ANIMATIONS
+
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
+=animation($value...)
+	-webkit-animation:		$value
+	-moz-animation:			$value
+	-ms-animation:			$value
+	-o-animation:			$value
+	animation:				$value //W3C
+
+=animation-play-state($value...)
+	-webkit-animation-play-state:	$value
+	-moz-animation-play-state:		$value
+	-ms-animation-play-state:		$value
+	-o-animation-play-state:		$value
+	animation-play-state:			$value //W3C
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// 100% Height Layout
+
+=FullHeight($footer-height, $parent: #sheet, $child: #foot)
+	html
+		height: 100%
+	body
+		height: 100%
+	#{$parent}
+		position: relative
+		height: auto !important
+		height: 100%
+		min-height: 100%
+		padding-bottom: $footer-height
+	#{$child}
+		position: absolute
+		width: 100%
+		height: $footer-height
+		bottom: 0
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Center Elements Vertically
+
+=center-vertical($child)
+	display: inline-block
+	height: 100%
+	vertical-align: middle
+	&:before
+		display: inline-block
+		vertical-align: middle
+		content: " "
+		height: 100%
+	#{$child}
+		display: inline-block
+		vertical-align: middle
+
+=flex-center($align-items: center, $justify-center: false)
+	display: -webkit-box
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: flex // W3C
+	-webkit-box-align: $align-items
+	-webkit-align-items: $align-items
+	-moz-box-align: $align-items
+	-ms-flex-align: $align-items
+	align-items: $align-items // W3C
+	@if $justify-center == true
+		-webkit-box-pack: justify
+		-webkit-justify-content: center
+		-ms-flex-pack: justify
+		-moz-box-pack: justify
+		justify-content: center
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Micro Clearfix Hack; http://nicolasgallagher.com/micro-clearfix-hack/
+
+=clearfix
+	clear: both
+	&:before,
+	&:after
+		content: " " // space content avoids an Opera bug
+		display: table
+	&:after
+		clear: both
+	*zoom: 1 // IE 6/7
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// REM HANDLING
+// (c) Hugo Giraudel
+// http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+
+html
+	font-size: 62.5% // Sets up the Base 10 stuff
+	font-size: calc(1em * .625) // IE 11
+
+@function parseInt($n)
+	@return $n / ($n * 0 + 1)
+
+=rem($property, $values)
+	$px : ()
+	$rem: ()
+	@each $value in $values
+		@if $value == 0 or $value == auto
+			$px : append($px , $value)
+			$rem: append($rem, $value)
+		@else
+			$unit: unit($value)
+			$val: parseInt($value)
+			@if $unit == "px"
+				$px : append($px,  $value)
+				$rem: append($rem, ($val / 10 + rem))
+			@if $unit == "rem"
+				$px : append($px,  ($val * 10 + px))
+				$rem: append($rem, $value)
+	@if $px == $rem
+		#{$property}: $px
+	@else
+		#{$property}: $px
+		#{$property}: $rem

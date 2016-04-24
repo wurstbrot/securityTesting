@@ -1,0 +1,101 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// RATE CALENDAR
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#avCalendar
+	+rem(margin, 0 0 $grid-spacing/2)
+	+rem(padding, 6px)
+	background: white
+	.avCal_header
+		+rem(padding, 6px 0 0)
+		font-weight: normal
+		+rem(font-size, $fontsize-menu)
+		text-align: center
+		position: relative
+		&::after
+			content: " "
+			display: block
+			height: 1px
+			+rem(margin, 6px 6px 0)
+			background: $background
+		.avCal_leftSwitch,
+		.avCal_rightSwitch
+			display: block
+			+rem(width, 20px)
+			+rem(height, 20px)
+			cursor: pointer
+			color: $link-color
+			+rem(font-size, $fontsize-small)
+			text-indent: -666px
+			overflow: hidden
+			position: absolute
+			+rem(top, 6px)
+			&::before
+				@extend .icon-replacement
+			&.not-active
+				+opacity(.5)
+				cursor: default
+		.avCal_leftSwitch
+			+rem(left, 0)
+			&::before
+				content: $icon-arrow-thin-left
+		.avCal_rightSwitch
+			+rem(right, 0)
+			&::before
+				content: $icon-arrow-thin-right
+
+	.avCal_bodyFooter
+		.avCal_bodyElement
+			+rem(padding, 10px 0 0)
+		.booked_out
+			color: $background-booking
+			&::before
+				content: " "
+				display: inline-block
+				+rem(width, 12px)
+				+rem(height, 12px)
+				+rem(margin-right, 3px)
+				background: $background-booking
+
+	.calendarMonth
+		width: 100%
+		border-collapse: collapse
+		.avCal_bodyHeader
+			td
+				+rem(padding, 5px)
+				font-weight: normal
+				+rem(font-size, $fontsize-small)
+				line-height: 1
+				text-align: center
+				vertical-align: bottom
+		.avCal_bodyContent
+			td
+				width: 100% * 1/7 !important
+				+rem(padding, 2px 0 0 2px)
+				background: $background
+				border: 2px solid white
+				cursor: pointer
+				+rem(font-size, $fontsize-tiny)
+				line-height: 1
+				vertical-align: top
+				&.date-today
+					color: $link-color
+					font-weight: bold
+				&.empty
+					background: transparentize($background,.8)
+					cursor: default
+				&.disabled
+					background: $background-booking
+					color: white
+					cursor: default
+				&.start_selected,
+				&.end_selected,
+				&.current
+					background: $link-color
+					color: white
+				&.start_selected
+					&.disabled
+						background: mix($link-color, $background-booking)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// end

@@ -1,0 +1,144 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// ADD2ANY
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// SHARE HOTEL PAGE
+
+.share-hotel
+	+rem(padding, 5px 20px 0 0)
+	position: absolute
+	top: -30px
+	left: 0
+	right: 0
+	text-align: center
+	.add2any
+		> em
+			display: inline-block
+			color: white
+			font-style: normal
+			font-weight: normal
+			+rem(font-size, $fontsize-small)
+			text-transform: uppercase
+		> div
+			display: inline-block
+			position: relative
+			+rem(top, 2px)
+
+@media screen and (min-width: $desktop-breakpoint-small)
+	.share-hotel
+		right: 25%
+		left: auto
+		text-align: left
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// SHARE PRESS REPORT
+
+.share-report
+	.add2any
+		+rem(padding-top, $grid-spacing)
+		+clearfix
+		> em
+			display: inline-block
+			font-style: normal
+			font-weight: normal
+			+rem(font-size, $fontsize-small)
+			text-transform: uppercase
+		> div
+			display: inline-block
+			position: relative
+			+rem(top, 2px)
+		a
+			.a2a_svg
+				width: 32px !important
+				height: 32px !important
+				line-height: 32px !important
+				background-size: 32px auto !important
+				-webkit-filter: invert(.75) sepia(.75)
+				filter: invert(.75) sepia(.75)
+
+@media screen and (min-width: $desktop-breakpoint-small)
+	.download
+		+ .share-report
+			+rem(margin-top, -42px)
+
+	.share-report
+		float: right
+		.add2any
+			padding-top: 0
+			a
+				line-height: 16px
+				.a2a_svg
+					width: 16px !important
+					height: 16px !important
+					line-height: 16px !important
+					background-size: 16px auto !important
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// SHARE PACKAGE
+
+.share-package
+	.add2any
+		> em
+			display: block
+			font-style: normal
+			font-weight: normal
+			+rem(font-size, $fontsize-small)
+			text-transform: uppercase
+		> div
+			display: block
+			position: relative
+			+rem(top, 2px)
+		a
+			.a2a_svg
+				-webkit-filter: invert(.75) sepia(.75)
+				filter: invert(.75) sepia(.75)
+
+@media screen and (min-width: $desktop-breakpoint-small)
+	.download
+		+ .share-report
+			+rem(margin-top, -42px)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// SHARE IMAGES (POPUP)
+
+.white-popup
+	.add2any
+		+rem(padding-top, $grid-spacing)
+		> em
+			display: inline-block
+			font-style: normal
+			font-weight: normal
+			+rem(font-size, $fontsize-small)
+			text-transform: uppercase
+		> div
+			display: inline-block
+			position: relative
+			+rem(top, 2px)
+		a
+			float: none
+			display: inline-block
+			line-height: 32px
+			.a2a_svg
+				width: 32px !important
+				height: 32px !important
+				line-height: 32px !important
+				background-size: 32px auto !important
+				-webkit-filter: invert(.75) sepia(.75)
+				filter: invert(.75) sepia(.75)
+
+@media screen and (min-width: $desktop-breakpoint-small)
+	.white-popup
+		.add2any
+			padding-top: 0
+			a
+				float: left
+				line-height: 16px
+				.a2a_svg
+					width: 16px !important
+					height: 16px !important
+					line-height: 16px !important
+					background-size: 16px auto !important
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// end

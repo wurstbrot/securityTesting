@@ -1,0 +1,225 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// MAIN IMAGE
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#main-image
+	.owlcarousel-slider
+		position: relative
+		.owl-prev,
+		.owl-next
+			display: block
+			+rem(width, 40px)
+			+rem(height, 40px)
+			color: white
+			text-indent: -666px
+			overflow: hidden
+			position: absolute
+			z-index: 1
+			top: 50%
+			+transform(translateY(-50%))
+			&::before
+				@extend .icon-replacement
+				+rem(font-size, 40px)
+				+text-shadow(0 0 2px transparentize(black,.5))
+		.owl-prev
+			left: 0
+			&::before
+				content: $icon-arrow-thin-left
+		.owl-next
+			right: 0
+			&::before
+				content: $icon-arrow-thin-right
+
+// DESKTOP (SMALL)
+@media screen and (min-width: $desktop-breakpoint-small)
+
+	#main-image
+
+		.owlcarousel-slider
+			.owl-prev
+				+rem(left, $grid-spacing)
+			.owl-next
+				+rem(right, $grid-spacing)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// HOTEL/PORTAL PAGE
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.hotelpage,
+.portalpage
+
+	#content
+
+		.owlcarousel-slider-wrapper
+			+rem(margin, 0 -5px)
+		.owlcarousel-slider
+			.owl-item
+				+rem(padding, 0 5px)
+			.owl-prev,
+			.owl-next
+				display: block
+				+rem(width, 40px)
+				+rem(height, 40px)
+				color: white
+				text-indent: -666px
+				overflow: hidden
+				position: absolute
+				top: 50%
+				+transform(translateY(-50%))
+				&::before
+					@extend .icon-replacement
+					+rem(font-size, 26px)
+					+text-shadow(0 0 2px transparentize(black,.5))
+			.owl-prev
+				left: 0
+				&::before
+					content: $icon-arrow-thin-left
+			.owl-next
+				right: 0
+				&::before
+					content: $icon-arrow-thin-right
+
+		.hotel-offers
+			.offers
+				.owl-prev,
+				.owl-next
+					&::before
+						+rem(font-size, 32px)
+				.owl-prev
+					+rem(left, 10px)
+				.owl-next
+					+rem(right, 10px)
+
+// WorldFilterPortal Page
+.offers
+	.owlcarousel-slider
+		.owl-prev,
+		.owl-next
+			display: block
+			+rem(width, 40px)
+			+rem(height, 40px)
+			color: white
+			text-indent: -666px
+			overflow: hidden
+			position: absolute
+			top: 50%
+			+transform(translateY(-50%))
+			&::before
+				@extend .icon-replacement
+				+rem(font-size, 26px)
+				+text-shadow(0 0 2px transparentize(black,.5))
+		.owl-prev
+			left: 0
+			&::before
+				content: $icon-arrow-thin-left
+		.owl-next
+			right: 0
+			&::before
+				content: $icon-arrow-thin-right
+
+// DESKTOP (SMALL)
+@media screen and (min-width: $desktop-breakpoint-small)
+
+	.hotelpage
+		#content
+			.owlcarousel-slider
+				.owl-prev,
+				.owl-next
+					+rem(width, 20px)
+					color: $link-color
+					&::before
+						+text-shadow(none)
+				.owl-prev
+					right: 100%
+					left: auto
+				.owl-next
+					right: auto
+					left: 100%
+
+			.hotel-offers
+				.offers
+					.owl-prev,
+					.owl-next
+						color: $background-booking
+						&::before
+							+rem(font-size, 32px)
+							+text-shadow(none)
+					.owl-prev
+						right: auto
+						+rem(left, $grid-spacing * -1)
+					.owl-next
+						+rem(right, $grid-spacing * -1)
+						left: auto
+
+	// WorldFilterPortal Page
+	.offers
+		.owlcarousel-slider
+			.owl-prev,
+			.owl-next
+				&::before
+					+rem(font-size, 40px)
+			.owl-prev
+				right: 100%
+				left: auto
+			.owl-next
+				left: 100%
+				right: auto
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// MODALBOX POPUP
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.white-popup
+	width: auto
+	+rem(max-width, 800px)
+	padding: 0
+	+rem(margin, 20px auto)
+	background: white
+	position: relative
+
+.owlcarousel-popup
+	.mfp-close
+		color: $background-quote
+		text-indent: -666px
+		overflow: hidden
+		&::before
+			@extend .icon-replacement
+			content: "\e625"
+
+.owlcarousel-popupslider
+	.item
+		> div
+			+rem(padding, $grid-spacing $grid-spacing*2 $grid-spacing/2)
+			text-align: center
+			strong
+				display: block
+				+rem(margin, 0 0 $grid-spacing/4)
+				+rem(font-size, $fontsize)
+				text-transform: uppercase
+
+	.owl-prev,
+	.owl-next
+		display: block
+		+rem(width, 40px)
+		+rem(height, 40px)
+		color: $link-color
+		text-indent: -666px
+		overflow: hidden
+		position: absolute
+		+rem(bottom, $grid-spacing/2)
+		+transform(translateY(-50%))
+		&::before
+			@extend .icon-replacement
+			+rem(font-size, 40px)
+	.owl-prev
+		+rem(left, $grid-spacing)
+		&::before
+			content: $icon-arrow-thin-left
+	.owl-next
+		+rem(right, $grid-spacing)
+		&::before
+			content: $icon-arrow-thin-right
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// end

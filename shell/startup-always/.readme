@@ -1,0 +1,2 @@
+This folder holds script files to be executed always at box boot-up.
+Name must be match the pattern *.sh.
