@@ -34,6 +34,8 @@ If you were asked for a password enter 'vagrant'.
 * Web Application Protector: cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /home/vagrant/wap-2.1/wap.jar -a -all -p /srv/www/skeleton.local/htdocs/<project>
 
 #Usage of DAST-Tools:
+* Nessus, go to http://www.tenable.com/products/nessus-vulnerability-scanner
+* metasploit, go to https://www.rapid7.com/products/metasploit/download.jsp
 * retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
 * sqlmap: /home/vagrant/sqlmap/sqlmap.py -u http://project.local/index.php?x=1 
 * testssl.sh: /home/vagrant/testssl.sh/testssl.sh https://www.fhunii.com
