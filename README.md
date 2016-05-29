@@ -24,7 +24,7 @@ vagrant ssh
 If you were asked for a password enter 'vagrant'.
 
 
-#Usage of SAST-Tools:
+##Usage of SAST-Tools:
 ### PHP
 * PHP_CodeSniffer (Code Style): sudo ./.config/composer/vendor/bin/phpcs /srv/www/skeleton.local/htdocs/<project>
 * pixy: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
