@@ -26,7 +26,7 @@ If you were asked for a password enter 'vagrant'.
 
 ##Usage of SAST-Tools:
 ### PHP
-* PHP_CodeSniffer (Code Style): sudo ./.config/composer/vendor/bin/phpcs /srv/www/skeleton.local/htdocs/<project>
+* PHP_CodeSniffer (Code Style): <pre>sudo ./.config/composer/vendor/bin/phpcs /srv/www/skeleton.local/htdocs/<project></pre>
 * pixy: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
 * RIPS: This will start an existing or create a new box (if not already created).
 * Web Application Protector: cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /home/vagrant/wap-2.1/wap.jar -a -all -p /srv/www/skeleton.local/htdocs/<project>
