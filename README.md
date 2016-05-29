@@ -27,22 +27,22 @@ If you were asked for a password enter 'vagrant'.
 ##Usage of SAST-Tools:
 ### PHP
 * PHP_CodeSniffer (Code Style): <pre>sudo ./.config/composer/vendor/bin/phpcs /srv/www/skeleton.local/htdocs/<project></pre>
-* pixy: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
-* RIPS: This will start an existing or create a new box (if not already created).
-* Web Application Protector: cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /home/vagrant/wap-2.1/wap.jar -a -all -p /srv/www/skeleton.local/htdocs/<project>
+* pixy: <pre>sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file</pre>
+* RIPS: <pre>This will start an existing or create a new box (if not already created).</pre>
+* Web Application Protector: <pre>cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /home/vagrant/wap-2.1/wap.jar -a -all -p /srv/www/skeleton.local/htdocs/<project></pre>
 
 ### JS
-* retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
+* retire.js: <pre>sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project></pre>
 * jsprime: http://securitytest.local:8888/
-* eslint: cd <project> && eslint .
+* eslint: <pre>cd <project> && eslint .</pre>
 
 #Usage of DAST-Tools:
 * arachni: http://securitytest.local:9292/ (admin@admin.admin / administrator); Tipp: Use autologin Plugin
 * Nessus, go to http://www.tenable.com/products/nessus-vulnerability-scanner
 * metasploit, go to https://www.rapid7.com/products/metasploit/download.jsp
-* retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
-* sqlmap: /home/vagrant/sqlmap/sqlmap.py -u http://project.local/index.php?x=1 
-* testssl.sh: /home/vagrant/testssl.sh/testssl.sh https://www.fhunii.com
+* retire.js: <pre>sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project></pre>
+* sqlmap: <pre>/home/vagrant/sqlmap/sqlmap.py -u http://project.local/index.php?x=1 </pre>
+* testssl.sh: /home/vagrant/testssl.sh/testssl.sh https://www.fhunii.com</pre>
 * OWASP Zap: Go to https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project and follow instructions
 * w3af: w3af
 
