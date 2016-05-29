@@ -1,5 +1,5 @@
 # Static/Dynamic Application Security Testing Tools
-This is a collection of static and dynamic security testing tools (SAST/DAST) from Timo Pagel. Initially created for team security checks along with a simplified OWASP Testing Guide v4 Checklist (see https://github.com/wurstbrot/OWASP-Testing-Checklist) 
+This is a collection of static and dynamic security testing tools (SAST/DAST) from Timo Pagel. Initially created for team security checks along with a simplified OWASP Testing Guide v4 Checklist (see https://github.com/wurstbrot/OWASP-Testing-Checklist). 
 
 ## Vagrant
 
