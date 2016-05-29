@@ -1,10 +1,11 @@
 # Static/Dynamic Application Security Testing Tools
+This is a collection of static and dynamic security testing tools (SAST/DAST) from Timo Pagel. Initially created for team security checks along with a simplified OWASP Testing Guide v4 Checklist (see 
 
 ## Vagrant
 
 ### Hosts file
 ```
-127.0.0.1 skeleton.local
+192.168.205.86 securitytest.local
 ```
 
 ### Starting your Vagrant box
@@ -24,16 +25,19 @@ If you were asked for a password enter 'vagrant'.
 
 
 #Usage of SAST-Tools:
-* arachni: http://skeleton.local:9292 (admin@admin.admin / administrator); Tipp: Use autologin Plugin
-* Iniscan: /home/vagrant/.config/composer/vendor/psecio/iniscan/bin/iniscan scan --path <path-to- php.ini>
+### PHP
 * PHP_CodeSniffer (Code Style): sudo ./.config/composer/vendor/bin/phpcs /srv/www/skeleton.local/htdocs/<project>
-* pixyi: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
-* RIPS: http://skeleton.local:8086/rips/index.php
-* retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
-* SensioLabs Security Checker: php /home/vagrant/security-checker.phar security:check <project>/composer.lock
+* pixy: sudo /home/vagrant/pixy/run-all.pl /srv/www/skeleton.local/htdocs/<project>/file
+* RIPS: This will start an existing or create a new box (if not already created).
 * Web Application Protector: cd /home/vagrant/wap-2.1 && java Xmx2g -Xss1g -jar /home/vagrant/wap-2.1/wap.jar -a -all -p /srv/www/skeleton.local/htdocs/<project>
 
+### JS
+* retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
+* jsprime: http://securitytest.local:8888/
+* eslint: cd <project> && eslint .
+
 #Usage of DAST-Tools:
+* arachni: http://securitytest.local:9292/ (admin@admin.admin / administrator); Tipp: Use autologin Plugin
 * Nessus, go to http://www.tenable.com/products/nessus-vulnerability-scanner
 * metasploit, go to https://www.rapid7.com/products/metasploit/download.jsp
 * retire.js: sudo retire --js --jspath /srv/www/skeleton.local/htdocs/<project>
@@ -44,3 +48,4 @@ If you were asked for a password enter 'vagrant'.
 
 #Examples for Infrastructure-Tests
 * Lynis: /home/vagrant/lynis/lynis  audit system --auditor "Timo Pagel"
+* Iniscan: /home/vagrant/.config/composer/vendor/psecio/iniscan/bin/iniscan scan --path <path-to-php.ini>

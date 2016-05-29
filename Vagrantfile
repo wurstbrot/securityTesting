@@ -27,14 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			skeleton.vm.provider "virtualbox" do |v|
 					v.customize [ "modifyvm", :id, "--cpus", "1" ]
 					v.customize [ "modifyvm", :id, "--memory", "4048" ]
-					v.name = "skeleton.local"
+					v.name = "securitytest.local"
 			end
 
 			skeleton.vm.network "private_network", ip: "192.168.205.86"
-			skeleton.vm.network "forwarded_port", guest: 22, host: 22128
-			skeleton.vm.network "forwarded_port", guest: 80, host: 8086
-			skeleton.vm.network "forwarded_port", guest: 8090, host: 8090
-			skeleton.vm.network "forwarded_port", guest: 9292, host: 9292
 
 			skeleton.vm.synced_folder ".", "/vagrant", owner: "root", group: "root"
 			skeleton.vm.synced_folder ".", "/srv/www/skeleton.local", owner: "www-data", group: "www-data"
