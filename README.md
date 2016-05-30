@@ -44,7 +44,6 @@ If you were asked for a password enter 'vagrant'.
 * sqlmap: <pre>/home/vagrant/sqlmap/sqlmap.py -u http://project.local/index.php?x=1 </pre>
 * testssl.sh: /home/vagrant/testssl.sh/testssl.sh https://www.fhunii.com</pre>
 * OWASP Zap: Go to https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project and follow instructions
-* w3af: w3af
 
 #Examples for Infrastructure-Tests
 * Lynis: /home/vagrant/lynis/lynis  audit system --auditor "Timo Pagel"
