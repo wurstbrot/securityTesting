@@ -37,7 +37,7 @@ If you were asked for a password enter 'vagrant'.
 * eslint: <pre>cd `<`project`>` && eslint .</pre>
 
 #Usage of DAST-Tools:
-* arachni: http://securitytest.local:9292/ (admin@admin.admin / administrator); Tipp: Use autologin Plugin
+* arachni: <pre>/home/vagrant/arachni-1.4-0.5.10/bin/arachni_web --host 0.0.0.0 &</pre>, go to http://securitytest.local:9292/ (admin@admin.admin / administrator); Tipp: Use autologin Plugin
 * Nessus, go to http://www.tenable.com/products/nessus-vulnerability-scanner
 * metasploit, go to https://www.rapid7.com/products/metasploit/download.jsp
 * retire.js: <pre>sudo retire --js --jspath /srv/www/skeleton.local/htdocs/`<`project`>`</pre>
